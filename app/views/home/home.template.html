@@ -1,8 +1,48 @@
-<div class="text-center">
-    Bootstrap test
+<div class="search">
+    <form ng-submit="blogSearchSubmit()">
+        <input type="text" class="form-control" placeholder="输入关键字进行搜索">
+        <button type="submit" class="submit-btn">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+    </form>
+</div>
+<div class="blog-list">
+    <table class="table table-hover" ng-if="blogs && blogs.length">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Created Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="blog in blogs">
+            <td>{{blog.title}}</td>
+            <td>{{blog.author}}</td>
+            <td>{{blog.createdDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p ng-if="!blogs || !blogs.length">Not any Blog</p>
 </div>
 
-<div>
-    <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i> font-awesome test
+<div class="create-blog">
+    <h5 class="text-center">发表博文：</h5>
+    <form ng-submit="createBlog()">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" ng-model="newBlog.title" class="form-control" name="title" id="title">
+        </div>
+        <div class="form-group">
+            <label for="author">Author:</label>
+            <input type="text" ng-model="newBlog.author" class="form-control" name="author" id="author">
+        </div>
+        <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea name="content" ng-model="newBlog.content" id="content" class="form-control" cols="30" rows="10"></textarea>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
 </div>
 

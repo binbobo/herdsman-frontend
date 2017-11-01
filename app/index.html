@@ -1,38 +1,56 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My AngularJS App</title>
-    <meta name="description" content="">
+    <title>MEAN in Practice</title>
+    <meta name="description" content="MongoDB Express AngularJS NodeJS">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- build:css styles/vendor.css -->
     <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
     <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="styles/font-awesome.css">
+    <link rel="stylesheet" href="styles/font-awesome/font-awesome.css">
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/pages/home.css">
     <link rel="stylesheet" href="styles/app.css">
     <!-- endbuild -->
 </head>
 <body>
-<ul class="menu">
-    <li>
-        <a ui-sref="home" ui-sref-active="active">Home</a>
-    </li>
-</ul>
+
+<div class="header">
+    <div class="logo">
+        <img src="assets/images/logo.jpeg" alt="">
+    </div>
+    <div class="title">
+        My Blog
+    </div>
+    <div class="sign">
+        <a href="#">Sign In</a>
+    </div>
+</div>
+
+<div class="content">
+    <ui-view></ui-view>
+</div>
+
+<div class="footer">
+</div>
+
 
 <!--[if lt IE 7]>
-    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
 <![endif]-->
-
-<ui-view></ui-view>
 
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -47,6 +65,11 @@
 
 <!-- build:js scripts/main.js -->
 <script src="scripts/app.js"></script>
+<script src="scripts/config.js"></script>
+
+<script src="scripts/api/base.js"></script>
+<script src="scripts/api/blog.js"></script>
+
 <script src="scripts/controllers/home.controller.js"></script>
 <!-- endbuild -->
 </body>
